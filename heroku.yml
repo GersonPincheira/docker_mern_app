@@ -1,0 +1,7 @@
+build:
+  docker:
+    server: Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  server: npm start

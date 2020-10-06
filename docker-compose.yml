@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+  webapp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: server-walmart
+    container_name: node-express
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    env_file: .env
+    environment:
+      - PORT=${PORT}
+      - MONGODB_URI=${MONGO_URI}
+  mongo:
+    image: mongo
+    container_name: mongodb
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    volumes:
+      - ./products-db/database:/database
+    ports:
+      - "27017:27017"
