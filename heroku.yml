@@ -1,7 +1,7 @@
 build:
   docker:
-    server: Dockerfile
+    web: Dockerfile
   config:
     NODE_ENV: production
 run:
-  server: npm start
+  web: npm start
