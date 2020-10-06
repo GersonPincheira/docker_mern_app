@@ -2,7 +2,7 @@
 
 FROM node:current-alpine
 
-# ARG NODE_ENV=development
+ARG PORT
 
 # Create App Directory
 RUN mkdir -p /usr/src/app
@@ -18,6 +18,6 @@ COPY . .
 RUN cd client && yarn install 
 RUN cd client && npm run build
 # Exports
-EXPOSE 8080
+EXPOSE $PORT
 
 CMD ["npm","start"]
