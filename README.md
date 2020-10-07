@@ -6,6 +6,6 @@ Para los ambientes de testing y desarrollo se recomienda usar docker-compose med
 ```sh
 docker-compose up --build
 ```
-## Produccion
-Actualmente para acceder a la aplicacion en produccion debe ingresar a https://hidden-chamber-54415.herokuapp.com/  donde podra acceder al buscador.
+## Producción
+Actualmente para acceder a la aplicacion en producción debe ingresar a https://hidden-chamber-54415.herokuapp.com/  donde podra acceder al buscador.
 
