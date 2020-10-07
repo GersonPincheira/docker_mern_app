@@ -12,7 +12,7 @@ const options = {
 };
 
 before((done) => {
-  mongoose.connect(process.env.MONGO_URI_TEST,options);
+  mongoose.connect(process.env.MONGO_URI_TEST, options);
   mongoose.connection
     .once("open", () => {
       console.log("connected to db test");
